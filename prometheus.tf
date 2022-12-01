@@ -19,7 +19,7 @@ resource "helm_release" "prometheus" {
           storageClass : var.storage_class_name
         }
       },
-      "prometheus-node-exporter" : {
+      nodeExporter : {
         tolerations : var.prometheus_node_exporter_tolerations
       }
     })
