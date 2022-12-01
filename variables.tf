@@ -16,6 +16,11 @@ variable "prometheus_retention_period" {
   description = "Retention period of prometheus metrics"
 }
 
+variable "prometheus_node_exporter_tolerations" {
+  type        = list(map(any))
+  description = "Prometheus node exporter tolerations list"
+}
+
 variable "alert_manager_disk_size" {
   type        = string
   default     = "5Gi"

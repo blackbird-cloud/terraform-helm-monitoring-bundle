@@ -18,6 +18,9 @@ resource "helm_release" "prometheus" {
           size : var.prometheus_disk_size
           storageClass : var.storage_class_name
         }
+      },
+      "prometheus-node-exporter" : {
+        tolerations : var.prometheus_node_exporter_tolerations
       }
     })
   ]
