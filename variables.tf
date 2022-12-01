@@ -53,3 +53,15 @@ variable "storage_class_name" {
   type        = string
   description = "K8S Storage Class name for persistence"
 }
+
+variable "grafana_service_account_create" {
+  type        = bool
+  default     = false
+  description = "Create service account for grafana to use"
+}
+
+variable "grafana_service_account_annotations" {
+  type        = map(any)
+  default     = {}
+  description = "Service account annotations for grafana"
+}

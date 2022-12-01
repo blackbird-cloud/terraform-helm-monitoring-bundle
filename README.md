@@ -32,6 +32,8 @@ No modules.
 | <a name="input_grafana_ingress_extra_annotations"></a> [grafana\_ingress\_extra\_annotations](#input\_grafana\_ingress\_extra\_annotations) | Extra annotations for grafana ingress | `map(string)` | `{}` | no |
 | <a name="input_grafana_ingress_host"></a> [grafana\_ingress\_host](#input\_grafana\_ingress\_host) | Ingress host name for grafana | `string` | n/a | yes |
 | <a name="input_grafana_ingress_overrides"></a> [grafana\_ingress\_overrides](#input\_grafana\_ingress\_overrides) | Ingress config block overrides for grafana | `map(any)` | `{}` | no |
+| <a name="input_grafana_service_account_annotations"></a> [grafana\_service\_account\_annotations](#input\_grafana\_service\_account\_annotations) | Service account annotations for grafana | `map(any)` | `{}` | no |
+| <a name="input_grafana_service_account_create"></a> [grafana\_service\_account\_create](#input\_grafana\_service\_account\_create) | Create service account for grafana to use | `bool` | `false` | no |
 | <a name="input_prometheus_disk_size"></a> [prometheus\_disk\_size](#input\_prometheus\_disk\_size) | Persistent disk size for prometheus | `string` | `"8Gi"` | no |
 | <a name="input_prometheus_node_exporter_tolerations"></a> [prometheus\_node\_exporter\_tolerations](#input\_prometheus\_node\_exporter\_tolerations) | Prometheus node exporter tolerations list | `list(map(any))` | n/a | yes |
 | <a name="input_prometheus_retention_period"></a> [prometheus\_retention\_period](#input\_prometheus\_retention\_period) | Retention period of prometheus metrics | `string` | `"30d"` | no |

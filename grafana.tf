@@ -9,6 +9,10 @@ resource "helm_release" "grafana" {
       rbac : {
         create : true
       },
+      serviceAccount : {
+        create : var.grafana_service_account_create
+        annotations : var.grafana_service_account_annotations
+      },
       persistence : {
         enabled : true,
         storageClassName : var.storage_class_name,
