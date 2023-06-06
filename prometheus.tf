@@ -3,8 +3,9 @@ resource "helm_release" "prometheus" {
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "prometheus"
   namespace  = "kube-system"
+  version    = "15.5.3"
 
-  values = [
+  values = concat([
     yamlencode({
       alertmanager : {
         persistentVolume : {
@@ -23,9 +24,8 @@ resource "helm_release" "prometheus" {
         tolerations : var.prometheus_node_exporter_tolerations
       }
     })
-  ]
+  ], var.prometheus_values)
 
   cleanup_on_fail = true
-  version         = "15.5.3"
   force_update    = true
 }

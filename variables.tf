@@ -65,3 +65,15 @@ variable "grafana_service_account_annotations" {
   default     = {}
   description = "Service account annotations for grafana"
 }
+
+variable "prometheus_values" {
+  type        = list(string)
+  description = "A list of extra values to pass into the Prometheus helm chart."
+  default     = []
+}
+
+variable "grafana_values" {
+  type        = list(string)
+  description = "A list of extra values to pass into the Grafana helm chart."
+  default     = []
+}

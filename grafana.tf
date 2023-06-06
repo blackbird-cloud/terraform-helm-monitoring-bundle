@@ -4,7 +4,7 @@ resource "helm_release" "grafana" {
   chart      = "grafana"
   namespace  = "kube-system"
 
-  values = [
+  values = concat([
     yamlencode({
       rbac : {
         create : true
@@ -37,7 +37,7 @@ resource "helm_release" "grafana" {
         }
       }
     })
-  ]
+  ], var.grafana_values)
 
   cleanup_on_fail = true
   version         = "6.26.1"
